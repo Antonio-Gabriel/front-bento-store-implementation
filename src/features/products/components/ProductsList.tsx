@@ -1,26 +1,17 @@
 import { useProducts } from '../api/get-products'
 
-import { useCartStore } from '@/stores/cart-store'
 import { FormatRealPrice } from '@/utils/format-price'
 import { ProductCard } from './Product/Card/ProductCard'
 import { ProductCardSkeleton } from './Product/Card/Product-Card-Skeleton'
 
 import { Product } from '../types'
 
-export function ProductsList() {
-  const products = useProducts()
-  const { cart, addProductIntoCart } = useCartStore(store => store)
-    
-  function handleAddProductIntoCart(product: Product) {    
-    addProductIntoCart({
-      name: product.title,
-      productId: product.id,
-      price: product.price,
-      quantity: 1,
-      userEmail: "herlanderbento19@gmail.com"
-    })    
-    console.log(cart)
-  }
+type ProductsHandlers = {
+  handleAddProductIntoCart: (product: Product) => void;
+}
+
+export function ProductsList({ handleAddProductIntoCart }: ProductsHandlers) {
+  const products = useProducts()  
 
   return (
     <>
