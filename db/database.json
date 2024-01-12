@@ -1,0 +1,157 @@
+{
+  "products": [
+    {
+      "id": "de4d",
+      "title": "Sleek Mirror Finish Phone Case",
+      "price": 2600,
+      "description": "Enhance your smartphone's look with this ultra-sleek mirror finish phone case. Designed to offer style with protection, the case features a reflective surface that adds a touch of elegance while keeping your device safe from scratches and impacts. Perfect for those who love a minimalist and modern aesthetic.",
+      "rate": 2,
+      "image": "https://i.imgur.com/yb9UQKL.jpeg"
+    },
+    {
+      "id": "8814",
+      "title": "Sleek Smartwatch with Vibrant Display",
+      "price": 16000,
+      "description": "Enhance your smartphone's look with this ultra-sleek mirror finish phone case. Designed to offer style with protection, the case features a reflective surface that adds a touch of elegance while keeping your device safe from scratches and impacts. Perfect for those who love a minimalist and modern aesthetic.",
+      "rate": 4,
+      "image": "https://i.imgur.com/LGk9Jn2.jpeg"
+    },
+    {
+      "title": "Elegant Solid Wood Dining Table",
+      "price": 10000,
+      "description": "Enhance your dining space with this sleek, contemporary dining table, crafted from high-quality solid wood with a warm finish. Its sturdy construction and minimalist design make it a perfect addition for any home looking for a touch of elegance. Accommodates up to six guests comfortably and includes a striking fruit bowl centerpiece. The overhead lighting is not included.",
+      "rate": 3.4,
+      "image": "https://i.imgur.com/4lTaHfF.jpeg",
+      "id": "9acc"
+    },
+    {
+      "id": "3d20",
+      "title": "Modern Minimalist Workstation Setup",
+      "price": 4900,
+      "description": "Elevate your home office with our Modern Minimalist Workstation Setup, featuring a sleek wooden desk topped with an elegant computer, stylish adjustable wooden desk lamp, and complimentary accessories for a clean, productive workspace. This setup is perfect for professionals seeking a contemporary look that combines functionality with design.",
+      "rate": 4,
+      "image": "https://i.imgur.com/3oXNBst.jpeg"
+    },
+    {
+      "id": "c403",
+      "title": "Modern Ergonomic Office Chair",
+      "price": 5000,
+      "description": "Elevate your office space with this sleek and comfortable Modern Ergonomic Office Chair. Designed to provide optimal support throughout the workday, it features an adjustable height mechanism, smooth-rolling casters for easy mobility, and a cushioned seat for extended comfort. The clean lines and minimalist white design make it a versatile addition to any contemporary workspace.",
+      "rate": 3,
+      "image": "https://i.imgur.com/3dU0m72.jpeg"
+    },
+    {
+      "id": "abaa",
+      "title": "Futuristi",
+      "price": 3900,
+      "description": "Step onto the field and stand out from the crowd with these eye-catching holographic soccer cleats. Designed for the modern player, these cleats feature a sleek silhouette, lightweight construction for maximum agility, and durable studs for optimal traction. The shimmering holographic finish reflects a rainbow of colors as you move, ensuring that you'll be noticed for both your skills and style. Perfect for the fashion-forward athlete who wants to make a statement.",
+      "rate": 5,
+      "image": "https://i.imgur.com/qNOjJje.jpeg"
+    },
+    {
+      "id": "6eae",
+      "title": "Rainbow Glitter High Heels",
+      "price": 300,
+      "description": "Step into the spotlight with these eye-catching rainbow glitter high heels. Designed to dazzle, each shoe boasts a kaleidoscope of shimmering colors that catch and reflect light with every step. Perfect for special occasions or a night out, these stunners are sure to turn heads and elevate any ensemble",
+      "rate": 3.4,
+      "image": "https://i.imgur.com/62gGzeF.jpeg"
+    },
+    {
+      "id": "0def",
+      "title": "Chic Summer Denim Espadrille Sandals",
+      "price": 250,
+      "description": "Step into summer with style in our denim espadrille sandals. Featuring a braided jute sole for a classic touch and adjustable denim straps for a snug fit, these sandals offer both comfort and a fashionable edge. The easy slip-on design ensures convenience for beach days or casual outings.",
+      "rate": 2.5,
+      "image": "https://i.imgur.com/62gGzeF.jpeg"
+    },
+    {
+      "id": "18ab",
+      "title": "Vibrant Runners: Bold Orange & Blue Sneakers",
+      "price": 2600,
+      "description": "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear.",
+      "rate": 4.5,
+      "image": "https://i.imgur.com/hKcMNJs.jpeg"
+    },
+    {
+      "id": "2c0c",
+      "title": "Vibrant Pink Classic Sneakers",
+      "price": 84,
+      "description": "Step into style with our Vibrant Pink Classic Sneakers! These eye-catching shoes feature a bold pink hue with iconic white detailing, offering a sleek, timeless design. Constructed with durable materials and a comfortable fit, they are perfect for those seeking a pop of color in their everyday footwear. Grab a pair today and add some vibrancy to your step!",
+      "rate": 5,
+      "image": "https://i.imgur.com/mcW42Gi.jpeg"
+    },
+    {
+      "id": "cb18",
+      "title": "Futuristic Silver and Gold High-Top Sneaker",
+      "price": 68,
+      "description": "Step into the future with this eye-catching high-top sneaker, designed for those who dare to stand out. The sneaker features a sleek silver body with striking gold accents, offering a modern twist on classic footwear. Its high-top design provides support and style, making it the perfect addition to any avant-garde fashion collection. Grab a pair today and elevate your shoe game!",
+      "rate": 4,
+      "image": "https://i.imgur.com/npLfCGq.jpeg"
+    },
+    {
+      "id": "155e",
+      "title": "Futuristic Chic High-Heel Boots",
+      "price": 340,
+      "description": "Elevate your style with our cutting-edge high-heel boots that blend bold design with avant-garde aesthetics. These boots feature a unique color-block heel, a sleek silhouette, and a versatile light grey finish that pairs easily with any cutting-edge outfit. Crafted for the fashion-forward individual, these boots are sure to make a statement.",
+      "rate": 4,
+      "image": "https://i.imgur.com/HqYqLnW.jpeg"
+    },
+    {
+      "id": "5e87",
+      "title": "Elegant Patent Leather Peep-Toe Pumps with Gold-Tone Heel",
+      "price": 57,
+      "description": "Step into sophistication with these chic peep-toe pumps, showcasing a lustrous patent leather finish and an eye-catching gold-tone block heel. The ornate buckle detail adds a touch of glamour, perfect for elevating your evening attire or complementing a polished daytime look.",
+      "rate": 3,
+      "image": "https://i.imgur.com/AzAY4Ed.jpeg"
+    },
+    {
+      "id": "9077",
+      "title": "Elegant Purple Leather Loafers",
+      "price": 17,
+      "description": "Step into sophistication with our Elegant Purple Leather Loafers, perfect for making a bold statement. Crafted from high-quality leather with a vibrant purple finish, these shoes feature a classic loafer silhouette that's been updated with a contemporary twist. The comfortable slip-on design and durable soles ensure both style and functionality for the modern man.",
+      "rate": 2,
+      "image": "https://i.imgur.com/Au8J9sX.jpeg"
+    },
+    {
+      "id": "834f",
+      "title": "Classic Blue Suede Casual Shoes",
+      "price": 50,
+      "description": "Step into comfort with our Classic Blue Suede Casual Shoes, perfect for everyday wear. These shoes feature a stylish blue suede upper, durable rubber soles for superior traction, and classic lace-up fronts for a snug fit. The sleek design pairs well with both jeans and chinos, making them a versatile addition to any wardrobe.",
+      "rate": 3.5,
+      "image": "https://i.imgur.com/sC0ztOB.jpeg"
+    },
+    {
+      "id": "57cb",
+      "title": "Computador Portátil Lenovo ThinkPad L15",
+      "price": 50,
+      "description": "| COMPUTADOR PORTÁTIL BARATO | COMPUTADOR PORTÁTIL EM PROMOÇÃO | COMPUTADOR PORTÁTIL EM SALDO | COMPUTADOR | PORTÁTIL | LENOVO",
+      "rate": 5,
+      "image": "https://romo.b-cdn.net/tecnologia/5038-large_default/-nbook-lenovo-thinpadl15-i5-10210u-8gb-ssd256gb-156-w10p-.jpg"
+    },
+    {
+      "id": "1f0a",
+      "title": "Best computer mouse in 2023, tried and tested ",
+      "description": "Um mouse muito bom e com grandes capacidades.",
+      "price": 1200,
+      "rate": 4,
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/210709123842-logitech-mx-master-3-product-card.jpg?q=x_0,y_0,h_2593,w_4607,c_fill/h_720,w_1280"
+    },
+    {
+      "id": "47e5",
+      "title": "Best computer mouse in 2023, tried and tested",
+      "description": "Um mouse muito bom e com grandes capacidades.",
+      "price": 450,
+      "rate": 4,
+      "image": "https://m.media-amazon.com/images/I/61OweGVNMdL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": "4e98",
+      "title": "Large RGB Gamming mouse Pad",
+      "description": "A mouse pad so nice",
+      "price": 230,
+      "rate": 3,
+      "image": "https://m.media-amazon.com/images/I/71TBg3aD0gL._AC_UF894,1000_QL80_.jpg"
+    }
+  ],
+  "cart": []
+}

@@ -1,0 +1,22 @@
+POST http://localhost:3001/products
+Content-Type: application/json
+
+{
+  "title": "Computador Portátil Lenovo ThinkPad L15",
+  "price": 50,
+  "description": "| COMPUTADOR PORTÁTIL BARATO | COMPUTADOR PORTÁTIL EM PROMOÇÃO | COMPUTADOR PORTÁTIL EM SALDO | COMPUTADOR | PORTÁTIL | LENOVO",
+  "rate": 5,
+  "image": "https://romo.b-cdn.net/tecnologia/5038-large_default/-nbook-lenovo-thinpadl15-i5-10210u-8gb-ssd256gb-156-w10p-.jpg"
+}
+
+###
+PUT http://localhost:3001/products/9acc
+Content-Type: application/json
+
+{
+  "title": "Elegant Solid Wood Dining Table",
+  "price": 10000,
+  "description": "Enhance your dining space with this sleek, contemporary dining table, crafted from high-quality solid wood with a warm finish. Its sturdy construction and minimalist design make it a perfect addition for any home looking for a touch of elegance. Accommodates up to six guests comfortably and includes a striking fruit bowl centerpiece. The overhead lighting is not included.",
+  "rate": 3.4,
+  "image": "https://i.imgur.com/4lTaHfF.jpeg"
+}
