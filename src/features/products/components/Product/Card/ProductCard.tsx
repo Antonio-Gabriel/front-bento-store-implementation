@@ -2,6 +2,7 @@ import { StartIcon } from "@/assets/icons/Star";
 import { Button } from "@/components/ui/button";
 import { FiShoppingCart } from "react-icons/fi";
 import { LimitedText } from "../../LimitedText";
+import { Spinner } from "@/components/ui/spinner";
 
 
 type ProductCardProps = {
@@ -12,6 +13,7 @@ type ProductCardProps = {
   rate?: number;
   description?: string;
   className?: string;
+  isPending: boolean
   addProductIntoCart: () => void;
 };
 
@@ -22,9 +24,11 @@ export function ProductCard({
   rate = 0,
   oldPrice,
   className,
+  isPending,
   description,
   addProductIntoCart,
-}: ProductCardProps) {
+}: ProductCardProps) {  
+
   return (
     <div className={`flex flex-col items-start gap-y-4 ${className}`}>
       <div className="w-full h-56 rounded-lg bg-card flex-center">
@@ -51,11 +55,17 @@ export function ProductCard({
                 </span>
               ))}
           </div>          
-        </div>
+        </div>          
 
-        <Button onClick={addProductIntoCart} className="hover:bg-primary hover:brightness-75 transition-all duration-150">
-          <FiShoppingCart className="text-xl" />
-        </Button>
+        { isPending ? (
+          <Button disabled={true} className="hover:bg-primary hover:brightness-75 transition-all duration-150">            
+            <Spinner />
+          </Button>
+        ) : (
+          <Button onClick={addProductIntoCart} className="hover:bg-primary hover:brightness-75 transition-all duration-150">
+            <FiShoppingCart className="text-xl" />
+          </Button>
+        ) }
       </div>
 
       <LimitedText text={description ?? ''} limit={100} />

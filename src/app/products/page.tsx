@@ -1,24 +1,22 @@
 "use client"
 
-import Link from "next/link";
+import Link from 'next/link';
+
+import { useEffect } from 'react';
 
 import { useCartStore } from '@/stores/cart-store'
-import { Product } from '@/features/products/types'
-import { ProductsList } from '@/features/products/components/ProductsList'
+import { useProductsCart } from '@/features/carts/api/get-products-cart'
+import { ProductsList } from '@/features/products/components/ProductsList';
 
 export default function Products() {
-  const { cart, addProductIntoCart } = useCartStore(store => store)
-    
-  function handleAddProductIntoCart(product: Product) {    
-    addProductIntoCart({
-      name: product.title,
-      productId: product.id,
-      price: product.price,
-      quantity: 1,
-      userEmail: "herlanderbento19@gmail.com"
-    })    
-    console.log(cart)
-  }
+  const { data } = useProductsCart()
+  const { loadCart } = useCartStore(store => store)
+
+  useEffect(() => {
+    if (data && data.length > 0) {      
+      loadCart(data);
+    }
+  }, [data]);
 
   return (
     <div className="w-full flex flex-col gap-y-12 mb-8">
@@ -29,7 +27,7 @@ export default function Products() {
             Adicione os produtos que deseja comprar ao seu carrinho
           </p>
         </div>
-    
+
         <Link
           href="/products/register"
           className="hover:bg-primary sm:w-full md:w-auto text-center font-medium hover:brightness-75 transition-all px-6 py-3 text-sm rounded-md bg-primary duration-150"
@@ -39,7 +37,7 @@ export default function Products() {
       </div>
 
       <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <ProductsList handleAddProductIntoCart={handleAddProductIntoCart} />        
+        <ProductsList />
       </div>
     </div>
   );

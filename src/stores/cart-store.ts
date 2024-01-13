@@ -1,118 +1,101 @@
 import { create } from 'zustand'
 import { nanoid } from 'nanoid'
-import { useProductsCart } from '@/features/carts/api/get-products-cart'
-import { useUpdateProductsFromCart } from '@/features/carts/api/update-product-into-cart'
 
 type Cart = {
   id: string
   productId: string
   name: string
   quantity: number
+  image: string
   price: number
   userEmail: string
 }
 
 type CartStore = {
   cart: Cart[];
+  loadCart: (carts: Cart[]) => void;
   addProductIntoCart: (cartProduct: Omit<Cart, 'id'>) => void;
   removeProductFromCart: (productId: string, user: string) => void;
   increaseQuantity: (productId: string, user: string) => void;
-  decreaseQuantity: (productId: string, user: string) => void;
-  fetchCartData: () => Promise<void>;
-  updateProductIntoCart: (cartData?: Cart[]) => Promise<void>;
+  decreaseQuantity: (productId: string, user: string) => void;  
 };
 
 export const useCartStore = create<CartStore>((set) => ({
   cart: [],
+  loadCart: (carts: Cart[]) => {       
+    set(() => ({ cart: carts }));
+  },
   addProductIntoCart: (cartProduct: Omit<Cart, 'id'>) => {
     set((state) => {
-      const isProductInCart = state.cart.some(
+      const existingProductIndex = state.cart.findIndex(
         (product) =>
           product.productId === cartProduct.productId &&
           product.userEmail === cartProduct.userEmail
       );
-
-      const updatedCart = [...state.cart];
-
-      if (isProductInCart) {
-        state.cart = state.cart.map((product) => {
-          if (
-            product.productId === cartProduct.productId &&
-            product.userEmail === cartProduct.userEmail
-          ) {
-            return {
-              ...product,
-              quantity: product.quantity + cartProduct.quantity,
-            };
-          }
-          return product;
-        });
-      } else {
-        updatedCart.push({
+  
+      if (existingProductIndex !== -1) {        
+        state.cart[existingProductIndex] = {
+          ...state.cart[existingProductIndex],
+          quantity: state.cart[existingProductIndex].quantity + cartProduct.quantity,
+        };
+      } else {        
+        state.cart.push({
           ...cartProduct,
           id: nanoid(),
         });
       }
-
-      set({ cart: updatedCart });
-      useCartStore.getState().updateProductIntoCart(updatedCart)
-      return { cart: updatedCart };     
-    });    
+  
+      return { cart: state.cart };
+    });
   },
   removeProductFromCart: (productId: string, user: string) => {
     set((state) => {
-      state.cart = state.cart.filter(
+      const productIndex = state.cart.findIndex(
         (product) =>
-          !(product.productId === productId && product.userEmail === user)
+          product.productId === productId && product.userEmail === user
       );
+  
+      if (productIndex !== -1) {
+        state.cart.splice(productIndex, 1);
+      }
+  
       return { cart: state.cart };
     });
-  },
+  },  
   increaseQuantity: (productId: string, user: string) => {
     set((state) => {
-      state.cart = state.cart.map((product) => {
-        if (
-          product.productId === productId &&
-          product.userEmail === user
-        ) {
-          return { ...product, quantity: product.quantity + 1 };
-        }
-        return product;
-      });
-
+      const productIndex = state.cart.findIndex(
+        (product) =>
+          product.productId === productId && product.userEmail === user
+      );
+      
+      const newQtd = Math.min(state.cart[productIndex].quantity + 1, 10);
+  
+      if (productIndex !== -1) {
+        state.cart[productIndex] = {
+          ...state.cart[productIndex],
+          quantity: newQtd,
+        };
+      }
+  
       return { cart: state.cart };
     });
-  },
+  },  
   decreaseQuantity: (productId: string, user: string) => {
     set((state) => {
-      state.cart = state.cart.map((product) => {
-        if (
-          product.productId === productId &&
-          product.userEmail === user
-        ) {
-          return {
-            ...product,
-            quantity: Math.max(1, product.quantity - 1),
-          };
-        }
-        return product;
-      });
-
+      const productIndex = state.cart.findIndex(
+        (product) =>
+          product.productId === productId && product.userEmail === user
+      );
+  
+      if (productIndex !== -1) {
+        state.cart[productIndex] = {
+          ...state.cart[productIndex],
+          quantity: Math.max(1, state.cart[productIndex].quantity - 1),
+        };
+      }
+  
       return { cart: state.cart };
     });
   },
-  fetchCartData: async () => {
-    const { data } = await useProductsCart()
-    set({ cart: data || [] });
-  },
-  updateProductIntoCart: async (cartData?: Cart[]) => {
-    const { mutateAsync, isSuccess } = useUpdateProductsFromCart()
-    await mutateAsync({
-      cart: cartData || useCartStore.getState().cart
-    })
-
-    if(isSuccess) {
-      useCartStore.getState().fetchCartData()
-    }
-  }
 }))

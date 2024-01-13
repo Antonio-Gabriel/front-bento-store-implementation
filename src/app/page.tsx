@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { FcGoogle } from "react-icons/fc";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Separator } from "@/components/ui/separator";
-import { Header } from "@/components/layout/Header/Header";
-import { BaseInput } from "@/components/ui/Input/BaseInput";
-import { PasswordInput } from "@/components/ui/Input/PasswordInput";
+import Link from 'next/link';
+import { FcGoogle } from 'react-icons/fc';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Separator } from '@/components/ui/separator';
+import { Header } from '@/components/layout/Header/Header';
+import { BaseInput } from '@/components/ui/Input/BaseInput';
+import { PasswordInput } from '@/components/ui/Input/PasswordInput';
 
 export default function Home() {
   return (
@@ -18,6 +18,8 @@ export default function Home() {
             label="Email"
             placeholder="Digite seu email"
             type="email"
+            register={undefined}
+            error={undefined}
           />
           <PasswordInput
             label="Senha"
