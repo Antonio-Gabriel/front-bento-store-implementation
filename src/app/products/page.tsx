@@ -1,23 +1,22 @@
-"use client"
+'use client';
 
-import Link from "next/link";
+import Link from 'next/link';
 
-import { useCartStore } from '@/stores/cart-store'
-import { Product } from '@/features/products/types'
-import { ProductsList } from '@/features/products/components/ProductsList'
+import { Product } from '@/features/products/types';
+import { ProductsList } from '@/features/products/components/ProductsList';
+import { useCartStores } from '@/stores/cart-store-test';
 
 export default function Products() {
-  const { cart, addProductIntoCart } = useCartStore(store => store)
-    
-  function handleAddProductIntoCart(product: Product) {    
+  const { addProductIntoCart } = useCartStores();
+
+  function handleAddProductIntoCart(product: Product) {
     addProductIntoCart({
       name: product.title,
       productId: product.id,
       price: product.price,
       quantity: 1,
-      userEmail: "herlanderbento19@gmail.com"
-    })    
-    console.log(cart)
+      userEmail: 'herlanderbento19@gmail.com',
+    });
   }
 
   return (
@@ -29,7 +28,7 @@ export default function Products() {
             Adicione os produtos que deseja comprar ao seu carrinho
           </p>
         </div>
-    
+
         <Link
           href="/products/register"
           className="hover:bg-primary sm:w-full md:w-auto text-center font-medium hover:brightness-75 transition-all px-6 py-3 text-sm rounded-md bg-primary duration-150"
@@ -39,7 +38,7 @@ export default function Products() {
       </div>
 
       <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <ProductsList handleAddProductIntoCart={handleAddProductIntoCart} />        
+        <ProductsList handleAddProductIntoCart={handleAddProductIntoCart} />
       </div>
     </div>
   );

@@ -151,7 +151,17 @@
       "price": 230,
       "rate": 3,
       "image": "https://m.media-amazon.com/images/I/71TBg3aD0gL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": "6675",
+      "title": "Skytech Gaming Chronos Mini Gaming PC Desktop ",
+      "description": "\n    AMD Ryzen 5 3600 3.6GHz (4.2GHz Max Boost) CPU Processor | 500GB NVME SSD – Up to 30x Faster Than Traditional HDD\n    NVIDIA Geforce RTX 3050 8GB GDDR6 Graphics Card (Brand may vary) | 16GB DDR4 RAM 3200 Gaming Memory with Heat Spreader | Windows 11 Home 64-bit\n    802.11 AC | No Bloatware | Graphic output options include 1 x HDMI, and 1 x Display Port Guaranteed, Additional Ports may vary | USB Ports Including 2.0, 3.0, and 3.2 Gen1 Ports | HD Audio and Mic | Free Gaming Keyboard and Mouse\n    4 x RGB Fans for Maximum Cooling Performance | Skytech Chronos Mini Gaming Case with Front Mesh - Black Edition | 1 Year Warranty on Parts and Labor | Lifetime Free Technical Support | Assembled in the USA\n    This powerful gaming PC is capable of running all your favorite games such as Call of Duty Warzone, Fornite, Escape from Tarkov, Grand Theft Auto V, Valorant, World of Warcraft, League of Legends, Apex Legends, Roblox, PLAYERUNKNOWN's Battlegrounds, Overwatch, Counter-Strike: Global Offensive, Battlefield V, New World, Minecraft, Elden Ring, Rocket League, The Division 2, and more at Ultra settings, detailed 1080p Full HD resolution, and smooth 60+ FPS gameplay.\n",
+      "price": 8000,
+      "rate": 2,
+      "image": "https://m.media-amazon.com/images/I/91jHNGBFflL._AC_SL1500_.jpg"
     }
   ],
-  "cart": []
+  "carts": [
+  
+  ]
 }
