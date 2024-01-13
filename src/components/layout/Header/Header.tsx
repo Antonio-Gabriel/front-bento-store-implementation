@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Fragment } from 'react';
 
-import { Cart } from "../Cart/Cart";
+import { FiUser } from "react-icons/fi";
 import { HeaderLinks } from "./utils/links";
-import { FiUser, FiShoppingCart } from "react-icons/fi";
+import { Cart } from '@/features/carts/components/Cart/Cart'
 
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";

@@ -7,20 +7,30 @@ import { useNotificationsStore } from '@/stores/notifications-store';
 import { Cart } from '../types';
 
 type UpdateProductIntoCartDTO = {
-  cart: Cart[];
+  cart: Omit<Cart, 'id'>;
 };
 
 async function updateProductFromCart({
   cart,
 }: UpdateProductIntoCartDTO): Promise<Cart> {
-  return axios.post('/carts', JSON.stringify({ ...cart }));
+  const carts = await axios.get<Cart[]>('/carts');
+
+  const isInTheCart = carts.find(
+      (c) => c.productId == cart.productId && c.userEmail == cart.userEmail)    
+
+  if (!isInTheCart) {    
+    return axios.post('/carts', cart);;
+  }  
+
+  isInTheCart.quantity += cart.quantity  
+  return axios.put(`/carts/${isInTheCart.id}`, isInTheCart);  
 }
 
 export function useUpdateProductsFromCart() {
   const { addNotification } = useNotificationsStore();
 
   return useMutation({
-    onMutate: async (newCartProduct: any) => {
+    onMutate: async (newCartProducts: any) => {
       await queryClient.cancelQueries({
         queryKey: ['carts'],
       });
@@ -28,11 +38,9 @@ export function useUpdateProductsFromCart() {
       const previousCartProducts = queryClient.getQueriesData({
         queryKey: ['carts'],
       });
+      
+      queryClient.setQueryData(['carts'], [...(previousCartProducts || []), newCartProducts.data])
 
-      queryClient.setQueryData(
-        ['carts'],
-        [...(previousCartProducts || []), newCartProduct.data]
-      );
       return { previousCartProducts };
     },
 

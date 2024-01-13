@@ -1,23 +1,22 @@
-'use client';
+"use client"
 
 import Link from 'next/link';
 
-import { Product } from '@/features/products/types';
+import { useEffect } from 'react';
+
+import { useCartStore } from '@/stores/cart-store'
+import { useProductsCart } from '@/features/carts/api/get-products-cart'
 import { ProductsList } from '@/features/products/components/ProductsList';
-import { useCartStores } from '@/stores/cart-store-test';
 
 export default function Products() {
-  const { addProductIntoCart } = useCartStores();
+  const { data } = useProductsCart()
+  const { loadCart } = useCartStore(store => store)
 
-  function handleAddProductIntoCart(product: Product) {
-    addProductIntoCart({
-      name: product.title,
-      productId: product.id,
-      price: product.price,
-      quantity: 1,
-      userEmail: 'herlanderbento19@gmail.com',
-    });
-  }
+  useEffect(() => {
+    if (data && data.length > 0) {      
+      loadCart(data);
+    }
+  }, [data]);
 
   return (
     <div className="w-full flex flex-col gap-y-12 mb-8">
@@ -38,7 +37,7 @@ export default function Products() {
       </div>
 
       <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <ProductsList handleAddProductIntoCart={handleAddProductIntoCart} />
+        <ProductsList />
       </div>
     </div>
   );

@@ -162,6 +162,32 @@
     }
   ],
   "carts": [
-  
+    {
+      "id": "3988",
+      "name": "Sleek Mirror Finish Phone Case",
+      "productId": "de4d",
+      "price": 2600,
+      "image": "https://i.imgur.com/yb9UQKL.jpeg",
+      "quantity": 1,
+      "userEmail": "herlanderbento19@gmail.com"
+    },
+    {
+      "id": "6da0",
+      "name": "Sleek Smartwatch with Vibrant Display",
+      "productId": "8814",
+      "price": 16000,
+      "image": "https://i.imgur.com/LGk9Jn2.jpeg",
+      "quantity": 1,
+      "userEmail": "herlanderbento19@gmail.com"
+    },
+    {
+      "id": "86c3",
+      "name": "Elegant Solid Wood Dining Table",
+      "productId": "9acc",
+      "price": 10000,
+      "image": "https://i.imgur.com/4lTaHfF.jpeg",
+      "quantity": 1,
+      "userEmail": "herlanderbento19@gmail.com"
+    }
   ]
 }
