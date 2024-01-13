@@ -16,7 +16,7 @@ async function updateProductFromCart({
   const carts = await axios.get<Cart[]>('/carts');
 
   const isInTheCart = carts.find(
-      (c) => c.productId == cart.productId && c.userEmail == cart.userEmail)    
+      (c: Cart) => c.productId == cart.productId && c.userEmail == cart.userEmail)    
 
   if (!isInTheCart) {    
     return axios.post('/carts', cart);;

@@ -23,7 +23,7 @@ async function updateProductQuantity({
   const carts = await axios.get<Cart[]>('/carts');
 
   const cartItem = carts.find(
-    (c) => c.productId === productId && c.userEmail === userEmail
+    (c: Cart) => c.productId === productId && c.userEmail === userEmail
   )
 
   if (!cartItem) {
